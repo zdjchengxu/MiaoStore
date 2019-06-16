@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimaryDark">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@drawable/ed_regist_round"
+            android:orientation="horizontal"
+            android:paddingLeft="10dp">
+
+            <ImageView
+                android:id="@+id/iv_back_popup"
+                android:layout_width="30dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center_vertical"
+                android:layout_margin="4dp"
+                android:src="@mipmap/zuojiantouwhite" />
+
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="4dp"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:text="电脑椅子"
+                android:textColor="#efefef"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="30dp"
+                android:layout_height="26dp"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="10dp"
+                android:src="@mipmap/sousuo" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/shop_magic_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="45dp" />
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/shop_vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+</LinearLayout>

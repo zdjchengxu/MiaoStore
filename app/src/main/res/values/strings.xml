@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MiaoStore</string>
+
+    <string-array name="shop_indicator_name">
+        <item>推荐</item>
+        <item>饮料</item>
+        <item>电脑椅</item>
+    </string-array>
+
+</resources>

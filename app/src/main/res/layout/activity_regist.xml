@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".activity.RegisterActivity">
+
+    <LinearLayout
+        android:background="@color/colorPrimaryDark"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:id="@+id/iv_back_register"
+            android:padding="10dp"
+            android:src="@mipmap/zuojiantou"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:layout_gravity="center_vertical"
+            android:textColor="#ffffff"
+            android:text="登录"
+            android:textSize="16sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_centerInParent="true"
+        android:focusableInTouchMode="true"
+        android:orientation="vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#444444"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:text="电话号码："
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ed_userphone_register"
+                android:background="@drawable/ed_regist_round"
+                android:lines="1"
+                android:layout_width="260dp"
+                android:layout_height="30dp" />
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView
+                android:textColor="#444444"
+                android:layout_gravity="center_vertical"
+                android:gravity="center"
+                android:padding="6dp"
+                android:textSize="16sp"
+                android:text="密码："
+                android:layout_width="100dp"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:id="@+id/ed_pwd_register"
+                android:inputType="textPassword"
+                android:background="@drawable/ed_regist_round"
+                android:lines="1"
+                android:layout_width="260dp"
+                android:layout_height="30dp" />
+        </LinearLayout>
+
+        <TextView
+            android:textColor="#d95f5f"
+            android:padding="6dp"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:id="@+id/tv_error_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Button
+            android:id="@+id/btn_confirm_register"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#444444"
+            android:text="确定"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp" />
+
+    </LinearLayout>
+
+</RelativeLayout>
