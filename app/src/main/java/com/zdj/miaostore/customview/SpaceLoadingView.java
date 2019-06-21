@@ -1,4 +1,4 @@
-package com.zdj.miaostore.util;
+package com.zdj.miaostore.customview;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -11,23 +11,23 @@ import com.zdj.miaostore.R;
 
 
 @SuppressLint("AppCompatCustomView")
-public class LoadingView extends ImageView {
+public class SpaceLoadingView extends ImageView {
 
     //选择角度
     private int rotateDegree = 0;
     private boolean isNeedRotate = false;
 
-    public LoadingView(Context context) {
+    public SpaceLoadingView(Context context) {
         this(context,null);
     }
 
-    public LoadingView(Context context, @Nullable AttributeSet attrs) {
+    public SpaceLoadingView(Context context, @Nullable AttributeSet attrs) {
         this(context, attrs,0);
     }
 
-    public LoadingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SpaceLoadingView(Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        setImageResource(R.mipmap.jiazai);
+        setImageResource(R.mipmap.fenxiangweixinpengyouquan);
     }
 
     //绑定到window时

@@ -1,8 +1,9 @@
 package com.zdj.miaostore.bean;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class HomePageBean {
+public class HomePageBean implements Serializable {
 
 
     private int code;
@@ -33,7 +34,7 @@ public class HomePageBean {
         this.data = data;
     }
 
-    public static class DataBean {
+    public static class DataBean implements Serializable{
         private List<ListAdvBean> list_adv;
         private List<ListShopHotBean> list_shop_hot;
         private List<ListShopRecommendBean> list_shop_recommend;
@@ -71,7 +72,7 @@ public class HomePageBean {
             this.list_shop = list_shop;
         }
 
-        public static class ListAdvBean {
+        public static class ListAdvBean implements Serializable{
             /**
              * advertisingId : 1
              * advertisingImg : /picture/a.jpg
@@ -107,7 +108,7 @@ public class HomePageBean {
             }
         }
 
-        public static class ListShopHotBean {
+        public static class ListShopHotBean implements Serializable{
             /**
              * shopId : 1
              * shopName : 懒人电竞椅
@@ -203,7 +204,22 @@ public class HomePageBean {
             }
         }
 
-        public static class ListShopRecommendBean {
+        public static class ListShopRecommendBean implements Serializable{
+            @Override
+            public String toString() {
+                return "ListShopRecommendBean{" +
+                        "shopId=" + shopId +
+                        ", shopName='" + shopName + '\'' +
+                        ", shopThumbnail='" + shopThumbnail + '\'' +
+                        ", shopPrice=" + shopPrice +
+                        ", categoryId=" + categoryId +
+                        ", shopType=" + shopType +
+                        ", shopDesc='" + shopDesc + '\'' +
+                        ", shopAddress='" + shopAddress + '\'' +
+                        ", categoryName='" + categoryName + '\'' +
+                        '}';
+            }
+
             /**
              * shopId : 7
              * shopName : 可叠落会议室椅培训椅简约现代会客椅办公接待洽谈凳子职员椅白色
@@ -215,6 +231,8 @@ public class HomePageBean {
              * shopAddress : 海南
              * categoryName : 电脑椅
              */
+
+
 
             private int shopId;
             private String shopName;
@@ -299,7 +317,7 @@ public class HomePageBean {
             }
         }
 
-        public static class ListShopBean {
+        public static class ListShopBean implements Serializable{
             /**
              * shopId : 1
              * shopName : 懒人电竞椅

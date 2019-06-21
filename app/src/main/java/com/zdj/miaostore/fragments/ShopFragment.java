@@ -13,6 +13,9 @@ import com.zdj.miaostore.R;
 import com.zdj.miaostore.adapter.ShopIndicatorAdapter;
 import com.zdj.miaostore.adapter.ShopVpAdapter;
 import com.zdj.miaostore.base.BaseFragment;
+import com.zdj.miaostore.base.BaseFragmentS;
+import com.zdj.miaostore.interfaces.ShopView;
+import com.zdj.miaostore.presenter.ShopPresenter;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -22,7 +25,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
 
-public class ShopFragment extends BaseFragment {
+public class ShopFragment extends BaseFragmentS<ShopView,ShopPresenter> implements ShopView {
 
     @BindView(R.id.shop_magic_indicator)
     MagicIndicator shopMagicIndicator;
@@ -31,6 +34,7 @@ public class ShopFragment extends BaseFragment {
     private View view;
     private ShopIndicatorAdapter shopIndicatorAdapter;
     private ShopVpAdapter shopVpAdapter;
+    private Unbinder unbinder;
 
     @Override
     protected View onSubViewLoaded(LayoutInflater layoutInflater, ViewGroup container) {
@@ -68,6 +72,16 @@ public class ShopFragment extends BaseFragment {
         ViewPagerHelper.bind(shopMagicIndicator, shopVp);
     }
 
+
+    @Override
+    protected ShopView createView() {
+        return this;
+    }
+
+    @Override
+    protected ShopPresenter createPresenter() {
+        return new ShopPresenter();
+    }
 
     @Override
     public void onDestroy() {

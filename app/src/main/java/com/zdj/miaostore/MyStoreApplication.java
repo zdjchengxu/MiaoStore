@@ -13,6 +13,7 @@ public class MyStoreApplication extends Application {
     private static Handler mHandler = null;
     private User user;
 
+
     @Override
     public void onCreate() {
         super.onCreate();

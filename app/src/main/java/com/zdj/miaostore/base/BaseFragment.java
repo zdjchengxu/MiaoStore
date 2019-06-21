@@ -14,13 +14,11 @@ import butterknife.Unbinder;
 public abstract class BaseFragment extends Fragment {
 
     private View rootView;
-    protected Unbinder unbinder;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         rootView = onSubViewLoaded(inflater,container);
-
         return rootView;
     }
 

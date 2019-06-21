@@ -1,4 +1,4 @@
-package com.zdj.miaostore.util;
+package com.zdj.miaostore.customview;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import com.zdj.miaostore.MyStoreApplication;
 import com.zdj.miaostore.R;
 
-public abstract class UILoader extends FrameLayout {
+public abstract class SpaceUILoader extends FrameLayout {
 
     private View loadingView;
     private View successView;
@@ -20,27 +20,27 @@ public abstract class UILoader extends FrameLayout {
     private View emptyView;
     private OnRetryClickListener onRetryClickListener;
 
-    public enum UIStatus {
+    public enum SpaceUIStatus {
         LOADING, SUCCESS, NETWORK_ERROR, EMPTY, NONE
     }
 
-    public UIStatus mUIStatus;
+    public SpaceUIStatus mUIStatus;
 
-    public UILoader(@NonNull Context context) {
+    public SpaceUILoader(@NonNull Context context) {
         this(context, null);
     }
 
-    public UILoader(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public SpaceUILoader(@NonNull Context context, @Nullable AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
-    public UILoader(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public SpaceUILoader(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
-        mUIStatus = UIStatus.NONE;
+        mUIStatus = SpaceUIStatus.NONE;
         init();
     }
 
-    public void updateStatus(final UIStatus status) {
+    public void updateStatus(final SpaceUIStatus status) {
         mUIStatus = status;
         //更新UI一定要在主线程上
         MyStoreApplication.getmHandler().post(new Runnable() {
@@ -65,7 +65,7 @@ public abstract class UILoader extends FrameLayout {
             addView(loadingView);
         }
         //根据状态设置是否可见
-        loadingView.setVisibility(mUIStatus == UIStatus.LOADING ? VISIBLE : GONE);
+        loadingView.setVisibility(mUIStatus == SpaceUIStatus.LOADING ? VISIBLE : GONE);
 
         //成功
         if (successView == null) {
@@ -73,7 +73,7 @@ public abstract class UILoader extends FrameLayout {
             addView(successView);
         }
         //根据状态设置是否可见
-        successView.setVisibility(mUIStatus == UIStatus.SUCCESS ? VISIBLE : GONE);
+        successView.setVisibility(mUIStatus == SpaceUIStatus.SUCCESS ? VISIBLE : GONE);
 
         //网络错误页面
         if (netWorkErrorView == null) {
@@ -81,7 +81,7 @@ public abstract class UILoader extends FrameLayout {
             addView(netWorkErrorView);
         }
         //根据状态设置是否可见
-        netWorkErrorView.setVisibility(mUIStatus == UIStatus.NETWORK_ERROR ? VISIBLE : GONE);
+        netWorkErrorView.setVisibility(mUIStatus == SpaceUIStatus.NETWORK_ERROR ? VISIBLE : GONE);
 
         //数据为空界面
         if (emptyView == null) {
@@ -89,7 +89,7 @@ public abstract class UILoader extends FrameLayout {
             addView(emptyView);
         }
         //根据状态设置是否可见
-        emptyView.setVisibility(mUIStatus == UIStatus.EMPTY ? VISIBLE : GONE);
+        emptyView.setVisibility(mUIStatus == SpaceUIStatus.EMPTY ? VISIBLE : GONE);
 
 
     }
@@ -102,7 +102,7 @@ public abstract class UILoader extends FrameLayout {
 
     private View getNetWorkErrorView() {
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_netwrokerror_view, this, false);
-        view.findViewById(R.id.iv_neterror).setOnClickListener(new View.OnClickListener() {
+        view.findViewById(R.id.iv_neterror).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
                 //网络加载出错

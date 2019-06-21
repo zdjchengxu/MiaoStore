@@ -19,7 +19,10 @@ public class RecommendPresenter extends BasePresenter<RecommendView> {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                getBaseView().onLoading();
+                if(getBaseView() != null){
+                    getBaseView().onLoading();
+                }
+
                 HomePageBean homePageBean = recommendModel.getRecommendList(userToken);
                 if(homePageBean != null){
                     if(homePageBean.getData().getList_shop_recommend().size() == 0 && homePageBean.getData().getList_adv().size() == 0){

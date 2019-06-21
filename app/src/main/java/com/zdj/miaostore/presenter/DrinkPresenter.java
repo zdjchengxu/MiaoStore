@@ -17,6 +17,7 @@ public class DrinkPresenter extends BasePresenter<DrinkView> {
         new Thread(new Runnable() {
             @Override
             public void run() {
+                getBaseView().onLoading();
                 CategoryDataBean categoryDrink = drinkModel.getCategoryDrink();
                 if (categoryDrink != null) {
                     if(categoryDrink.getData().getList().size() != 0){

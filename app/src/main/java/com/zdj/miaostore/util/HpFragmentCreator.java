@@ -1,6 +1,9 @@
 package com.zdj.miaostore.util;
 
 import com.zdj.miaostore.base.BaseFragment;
+import com.zdj.miaostore.base.BaseFragmentS;
+import com.zdj.miaostore.base.BasePresenter;
+import com.zdj.miaostore.base.BaseView;
 import com.zdj.miaostore.fragments.BuycarFragment;
 import com.zdj.miaostore.fragments.MineFragment;
 import com.zdj.miaostore.fragments.ShopFragment;
@@ -18,10 +21,10 @@ public class HpFragmentCreator {
 
     public final static int PAGE_COUNT = 4;
 
-    private static Map<Integer,BaseFragment> sCache = new HashMap<>();
+    private static Map<Integer,BaseFragmentS<BaseView,BasePresenter<BaseView>>> sCache = new HashMap<>();
 
-    public static BaseFragment getFragment(int index){
-        BaseFragment baseFragment = sCache.get(index);
+    public static BaseFragmentS getFragment(int index){
+        BaseFragmentS baseFragment = sCache.get(index);
         if(baseFragment != null){
             return baseFragment;
         }

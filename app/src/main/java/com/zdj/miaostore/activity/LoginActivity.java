@@ -8,9 +8,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.jph.takephoto.app.TakePhotoActivity;
 import com.zdj.miaostore.R;
 import com.zdj.miaostore.base.BaseActivity;
 import com.zdj.miaostore.MyStoreApplication;
+import com.zdj.miaostore.bean.HomePageBean;
 import com.zdj.miaostore.bean.User;
 import com.zdj.miaostore.presenter.LoginPresenter;
 import com.zdj.miaostore.interfaces.LoginView;
@@ -49,13 +52,13 @@ public class LoginActivity extends BaseActivity<LoginView, LoginPresenter> imple
             public void onClick(View v) {
 //                String userPhone = atPhoneLogin.getText().toString();
 //                String userPwd = edPwdLogin.getText().toString();
-                getPresenter().sendLogin("15617535217", "zdj123");
+                getPresenter().sendLogin("15627535217", "zdj123");
             }
         });
         ivRegisterLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(LoginActivity.this, ReleaseActivity.class);
                 startActivity(intent);
             }
         });

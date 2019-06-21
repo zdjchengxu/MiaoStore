@@ -5,4 +5,5 @@
     <color name="colorAccent">#7bc8ff</color>
     <color name="colorBgGray">#ededed</color>
     <color name="colorBgFragment">#f1f1f1</color>
+    <color name="colorShopPrice">#d42727</color>
 </resources>

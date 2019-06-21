@@ -14,7 +14,7 @@ import com.zdj.miaostore.bean.CategoryDataBean;
 import com.zdj.miaostore.interfaces.DrinkView;
 import com.zdj.miaostore.presenter.DrinkPresenter;
 import com.zdj.miaostore.util.LogUtil;
-import com.zdj.miaostore.util.UILoader;
+import com.zdj.miaostore.customview.UILoader;
 
 
 public class DrinkFragment extends BaseFragmentS<DrinkView, DrinkPresenter> implements DrinkView, UILoader.OnRetryClickListener {
@@ -55,7 +55,6 @@ public class DrinkFragment extends BaseFragmentS<DrinkView, DrinkPresenter> impl
         if (mUILoader.getParent() instanceof ViewGroup) {
             ((ViewGroup) mUILoader.getParent()).removeView(mUILoader);
         }
-        mUILoader.updateStatus(UILoader.UIStatus.LOADING);
         getPresenter().getCategoryDrink();
         return mUILoader;
     }
@@ -99,7 +98,6 @@ public class DrinkFragment extends BaseFragmentS<DrinkView, DrinkPresenter> impl
 
     @Override
     public void onRetryClick() {
-        mUILoader.updateStatus(UILoader.UIStatus.LOADING);
         getPresenter().getCategoryDrink();
     }
 }

@@ -1,0 +1,17 @@
+<LinearLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:layout_marginRight="10dp"
+    android:padding="4dp">
+
+    <ImageView
+        android:id="@+id/iv_img_gv_space_item"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="4dp"
+        android:src="@mipmap/friendcicrlebg"
+        android:scaleType="fitXY" />
+
+</LinearLayout>

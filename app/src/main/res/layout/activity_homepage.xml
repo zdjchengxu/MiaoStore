@@ -8,11 +8,20 @@
     android:layout_height="match_parent"
     tools:context=".activity.HomepageActivity">
 
+
+
+
     <android.support.v4.view.ViewPager
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1" />
+    <View
+        android:layout_marginRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:background="#e1e1e1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"/>
 
     <net.lucode.hackware.magicindicator.MagicIndicator
         android:id="@+id/magic_indicator1"

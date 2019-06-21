@@ -13,7 +13,9 @@ import android.widget.TextView;
 
 import com.zdj.miaostore.R;
 import com.zdj.miaostore.adapter.HomepageVpAdapter;
+import com.zdj.miaostore.util.HpFragmentCreator;
 import com.zdj.miaostore.util.LogUtil;
+import com.zdj.miaostore.util.StatusBarUtil;
 
 import net.lucode.hackware.magicindicator.MagicIndicator;
 import net.lucode.hackware.magicindicator.ViewPagerHelper;
@@ -39,13 +41,46 @@ public class HomepageActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_homepage);
 
+        initView();
 
+
+
+    }
+
+    private void initView() {
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
-        mExamplePagerAdapter = new HomepageVpAdapter(getSupportFragmentManager(),mDataList);
+        mViewPager.setOffscreenPageLimit(HpFragmentCreator.PAGE_COUNT);
+        mExamplePagerAdapter = new HomepageVpAdapter(getSupportFragmentManager(), mDataList);
         mViewPager.setAdapter(mExamplePagerAdapter);
 
-        initMagicIndicator1();
+        mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
 
+            }
+
+            @Override
+            public void onPageSelected(int i) {
+                switch (i){
+                    case HpFragmentCreator.INDEX_SHOP:
+                        break;
+                    case HpFragmentCreator.INDEX_BUYCAR:
+                        LogUtil.e("HomepageActivity","购物车界面");
+                        break;
+                    case HpFragmentCreator.INDEX_SPACE:
+                        break;
+                    case HpFragmentCreator.INDEX_MINE:
+                        break;
+                }
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
+            }
+        });
+
+        initMagicIndicator1();
     }
 
     private void initMagicIndicator1() {
@@ -66,7 +101,7 @@ public class HomepageActivity extends FragmentActivity {
                 View customLayout = LayoutInflater.from(context).inflate(R.layout.simple_pager_title_layout, null);
                 final ImageView titleImg = (ImageView) customLayout.findViewById(R.id.title_img);
                 final TextView titleText = (TextView) customLayout.findViewById(R.id.title_text);
-                switch (index){
+                switch (index) {
                     case 0:
                         titleImg.setImageResource(R.mipmap.shangcheng);
                         break;
